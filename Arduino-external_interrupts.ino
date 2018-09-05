@@ -47,9 +47,9 @@ void timer1_init()
 {
   cli();
     // set up timer with no prescaling
-    TCCR0A = 0;
+    TCCR1A = 0;
     //prescaler = 1024
-    TCCR0B |= (1 << CS00)| (1<<CS02);
+    TCCR1B = (1 << CS12)| (1<<CS10);
  
     // initialize counter
     TCNT1 = 0;
@@ -67,6 +67,6 @@ void loop() {
     flag = 0;
   }
   digitalWrite(led,state);
-
+  
 
 }
